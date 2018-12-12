@@ -18,7 +18,10 @@ import { HeroeComponent } from './components/heroes/heroe.component';
     HeroeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    APP_ROUTNG
   ],
   providers: [],
   bootstrap: [AppComponent]
