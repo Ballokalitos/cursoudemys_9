@@ -24,11 +24,16 @@
             ],
 
             "styles": [
-                    "src/styles.css"
-          ],
-          "scripts": [
+                      "src/styles.css",
+                      "src/assets/css/bootstrap.min.css"
 
+            ],
+            "scripts": [
+                  "src/assets/jquery/jquery.slim.min.js",
+                  "src/assets/js/bootstrap.min.js"
           ],
+
+          
 
 
 
