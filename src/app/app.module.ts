@@ -6,6 +6,8 @@ import {HttpModule} from '@angular/http';
 
 import { APP_ROUTNG } from "./app.routes";
 
+import {HeroesService} from './services/heroes.service';
+
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
@@ -23,7 +25,9 @@ import { HeroeComponent } from './components/heroes/heroe.component';
     HttpModule,
     APP_ROUTNG
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
