@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+//import { HttpClientModule } from '@angular/common/http'
 import {HttpModule} from '@angular/http';
 
 import { APP_ROUTNG } from "./app.routes";
@@ -23,6 +24,7 @@ import { HeroeComponent } from './components/heroes/heroe.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    //HttpClientModule,
     APP_ROUTNG
   ],
   providers: [
