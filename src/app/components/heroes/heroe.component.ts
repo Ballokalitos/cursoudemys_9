@@ -12,7 +12,7 @@ import { HeroesService } from '../../services/heroes.service';
   })
 export class HeroeComponent implements OnInit {
 
- heroe:Heroe = {
+ private heroe:Heroe = {
  nombre:"",
  bio:"",
  casa:"Marvel"
@@ -27,10 +27,18 @@ id:string;
 // seobtiene los valores de parametro ...
  // se configura Observable
   this.route.params
-  .subscribe( parametros=>this.id=parametros['id']);
+  .subscribe( parametros=>{
+    this.id= parametros['id']
+    if( this.id !== "nuevo" ) {
+       this._heroesService.getHeroe( this.id)
+        .subscribe( heroe=> this.heroe = heroe)
+
+      }
+    });
 
 
   }
+
 
   //private router:Router) { }
 
@@ -55,6 +63,12 @@ id:string;
                 error=> console.error(error));
 
     }
-
  }
+
+agregarNuevo( forma:NgForm) {
+  this.router.navigate(['/heroe','nuevo']);
+  forma.reset({
+    casa:"Marvel"
+  });
+ } 
 }
