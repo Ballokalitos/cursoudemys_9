@@ -9,6 +9,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class HeroesService {
     heroesURL:string = "https://heroesapp-6569c.firebaseio.com/heroes.json"
+    heroeURL:string = "https://heroesapp-6569c.firebaseio.com/heroes/";
 
     constructor( private http:Http ) { }
     //constructor(private http: HttpClient) { }
@@ -24,4 +25,22 @@ export class HeroesService {
       })
 
     }
+
+    actualizarHeroe (heroe:Heroe,key$:string ) {
+       let body=JSON.stringify( heroe );
+       let headers = new Headers({
+        'Content-Type':'applications/json'
+      });
+      let url=`${ this.heroeURL }/${ key$ }.json`;
+      return this.http.put (  url, body, { headers } )
+      .map( res=>{
+        console.log(res.json());
+        return res.json();
+      })
+
+    }
+
+
+
+
   }
